@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1>Hip Hop Top 3</h1>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
+<!DOCTYPE html>
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      A$AP ALBUMS
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#" onclick = "createTable()">TESTING</a>
+      <a class="dropdown-item" href="#">COZY TAPES</a>
+      <a class="dropdown-item" href="#" >COZY TAPES 2</a>
+    </div>
+  </div>
+
+
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      TRAVIS SCOTT ALBUMS
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">1 “Rodeo” (2015)</a>
+      <a class="dropdown-item" href="#">2 “Days Before Rodeo”</a>
+      <a class="dropdown-item" href="#">3 “Astroworld”</a>
+    </div>
+  </div>
+<script>
+const createTable = function(){
+     const body = document.getElementsByTagName("body")[0]
+     for (let index = 0; index < 12; index++) {
+         const tRow = document.createElement("div")
+         tRow.className = "row text-center"
+         for (let i = 0; i < 6; i++) {
+            const tCol = document.createElement("div")
+             tCol.className = "col col-2"
+             tCol.innerHTML = "Artist"
+              if(i === 0){
+                  tCol.id = index;
+                tCol.innerHTML = '<button type="button" onclick = "turnGreen(' + index + ')"">Add To PlayList</button>'
+              }else if(i === 1){
+                tCol.innerHTML = "Artist Name"
+              }else if(i === 2){
+                tCol.innerHTML = "Song Name"
+}else if(i === 3){
+    tCol.innerHTML = "Duaration (min:seconds)"
+}else if(i === 4){
+    tCol.innerHTML = "Views"
+}else if(i === 5){
+    tCol.innerHTML = "Likes"
+}
+tRow.appendChild(tCol)
+         }
+         body.appendChild(tRow)
+     }
+    }
+    
+const turnGreen = function(index){
+let getIt = document.getElementsByTagName('div')
+getIt[5 + (index*5)].style.backgroundColor = "pink"
+console.log(getIt)
+}
+    </script>
